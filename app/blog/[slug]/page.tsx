@@ -1,4 +1,4 @@
-"user server"
+"use server"
 
 import { getBlogPost, getAllBlogPosts } from "@/lib/blogs";
 import ReactMarkdown from "react-markdown";
@@ -9,7 +9,7 @@ interface BlogPostPageProps {
   }
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   const posts = getAllBlogPosts();
   return posts.map((post) => ({
     slug: post.slug,
