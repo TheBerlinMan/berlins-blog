@@ -1,10 +1,12 @@
+"user server"
+
 import { getBlogPost, getAllBlogPosts } from "@/lib/blogs";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 interface BlogPostPageProps {
   params: {
     slug: string;
-  };
+  }
 }
 
 export function generateStaticParams() {
@@ -14,7 +16,7 @@ export function generateStaticParams() {
   }));
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
+const BlogPostPage = async ({ params }: BlogPostPageProps) => {
   const post = getBlogPost(params.slug);
 
   return (
@@ -29,3 +31,5 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     </div>
   );
 }
+
+export default BlogPostPage;
