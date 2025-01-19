@@ -53,7 +53,7 @@ export function getBlogPost(slug: string) {
   const matterResult = matter(fileContents);
 
   return {
-    slug,
+    slug: slug as string,
     content: matterResult.content,
     ...(matterResult.data as {
       title: string;

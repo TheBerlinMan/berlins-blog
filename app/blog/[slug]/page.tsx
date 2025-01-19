@@ -1,23 +1,29 @@
-"use server"
+import { getAllBlogPosts, getBlogPost } from '@/lib/blogs'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import ReactMarkdown from 'react-markdown'
 
-import { getBlogPost, getAllBlogPosts } from "@/lib/blogs";
-import ReactMarkdown from "react-markdown";
-import Link from "next/link";
-interface BlogPostPageProps {
-  params: {
-    slug: string;
-  }
+interface Props {
+  params: Promise<{
+    slug: string
+  }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export async function generateStaticParams() {
-  const posts = getAllBlogPosts();
+export function generateStaticParams() {
+  const posts = getAllBlogPosts()
   return posts.map((post) => ({
     slug: post.slug,
-  }));
+  }))
 }
 
-const BlogPostPage = async ({ params }: BlogPostPageProps) => {
-  const post = getBlogPost(params.slug);
+export default async function BlogPost({ params }: Props) {
+  const resolvedParams = await params
+  const post = getBlogPost(resolvedParams.slug)
+  
+  if (!post) {
+    notFound()
+  }
 
   return (
     <div className="max-w-4xl mx-auto px-16 py-8">
@@ -29,7 +35,5 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
       <br />
       <Link href="/">← Back Home</Link>
     </div>
-  );
+  )
 }
-
-export default BlogPostPage;
