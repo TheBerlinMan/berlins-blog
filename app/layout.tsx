@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Footer from "./components/Footer";
 
 const tommyFont = localFont({
   src: "./fonts/TommyFontt.otf",
@@ -70,7 +71,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${workSans.variable} ${tommyFont.variable}`}>{children}</body>
+      <body className={`${workSans.variable} ${tommyFont.variable} min-h-screen flex flex-col`}>
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }

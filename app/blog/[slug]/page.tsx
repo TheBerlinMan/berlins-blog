@@ -1,28 +1,28 @@
-import { getAllBlogPosts, getBlogPost } from '@/lib/blogs'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import ReactMarkdown from 'react-markdown'
+import { getAllBlogPosts, getBlogPost } from "@/lib/blogs";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import ReactMarkdown from "react-markdown";
 
 interface Props {
   params: Promise<{
-    slug: string
-  }>
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
+    slug: string;
+  }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export function generateStaticParams() {
-  const posts = getAllBlogPosts()
+  const posts = getAllBlogPosts();
   return posts.map((post) => ({
     slug: post.slug,
-  }))
+  }));
 }
 
 export default async function BlogPost({ params }: Props) {
-  const resolvedParams = await params
-  const post = getBlogPost(resolvedParams.slug)
-  
+  const resolvedParams = await params;
+  const post = getBlogPost(resolvedParams.slug);
+
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -35,5 +35,5 @@ export default async function BlogPost({ params }: Props) {
       <br />
       <Link href="/">← Back Home</Link>
     </div>
-  )
+  );
 }

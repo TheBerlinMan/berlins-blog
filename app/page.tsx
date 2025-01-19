@@ -10,7 +10,7 @@ export default function Home() {
       <p className='text-lg mb-8'>They say it&apos;s a good idea to host your own blog.</p>
       <div className="space-y-4">
         {posts.map((post) => (
-          <article key={post.slug} className="p-4 border-2 rounded-md border-black bg-zinc-800">
+          <article key={post.slug} className="p-4 border-2 rounded-md border-green bg-zinc-800">
             <Link href={`/blog/${post.slug}`} className="block">
               <h2 className="text-xl font-bold mb-2">{post.title}</h2>
               <p className="text-gray-500 mb-2">{post.date}</p>
