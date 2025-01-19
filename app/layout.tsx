@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+const tommyFont = localFont({
+  src: "./fonts/TommyFontt.otf",
+  variable: "--font-tommy",
+});
+
 const workSans = localFont({
   src: [
     {
@@ -65,7 +70,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={workSans.variable}>{children}</body>
+      <body className={`${workSans.variable} ${tommyFont.variable}`}>{children}</body>
     </html>
   );
 }
