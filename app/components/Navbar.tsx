@@ -7,7 +7,8 @@ import Contact from './Contact'
 const Navbar = () => {
   return (
     <Tabs defaultValue="blogs" className='mt-6'>
-      <div className="flex justify-center mb-4">
+      {/* <div className="flex justify-center mb-4"> */}
+      <div className="mb-4">
         <TabsList>
           <TabsTrigger value="blogs">Blog</TabsTrigger>
             <TabsTrigger value="about">About</TabsTrigger>
