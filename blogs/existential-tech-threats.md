@@ -1,6 +1,7 @@
 ---
 title: Existential Tech Threats
 date: '2024-12-24'
+category: musing
 ---
 
 # Existential Tech Threats

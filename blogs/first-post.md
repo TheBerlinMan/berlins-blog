@@ -1,6 +1,7 @@
 ---
 title: Hello (My) World
 date: '2025-01-17'
+category: musing
 ---
 
 # Hello (My) World

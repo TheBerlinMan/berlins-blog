@@ -7,6 +7,7 @@ interface BlogPost {
   title: string;
   date: string;
   description: string;
+  category: string;
 }
 
 const blogsDirectory = path.join(process.cwd(), "blogs");
@@ -31,6 +32,7 @@ export function getAllBlogPosts(): BlogPost[] {
         title: string;
         date: string;
         description: string;
+        category: string;
       }),
     };
   });
@@ -59,6 +61,7 @@ export function getBlogPost(slug: string) {
       title: string;
       date: string;
       description: string;
+      category: string;
     }),
   };
 }
