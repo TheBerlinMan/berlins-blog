@@ -2,6 +2,7 @@ import { getAllBlogPosts, getBlogPost } from "@/lib/blogs";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import { formatDateLong } from "@/lib/functions";
 
 interface Props {
   params: Promise<{
@@ -27,7 +28,7 @@ export default async function BlogPost({ params }: Props) {
 
   return (
     <div className="max-w-4xl mx-auto px-16 py-8">
-      <div className="text-gray-500 mb-4">{post.date}</div>
+      <div className="text-gray-500 mb-4">{formatDateLong(post.date)}</div>
       <div className="max-w-4xl prose-sm">
         <ReactMarkdown>{post.content}</ReactMarkdown>
       </div>

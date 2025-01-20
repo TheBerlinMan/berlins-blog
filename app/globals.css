@@ -5,20 +5,20 @@
 @tailwind utilities;
 
 :root {
-  --background: #0f000f;
-  --foreground: #171717;
+  --background: linear-gradient(to bottom, #ffffff, #87ceeb);
+  /* --foreground: #171717; */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0f000f;
-    --foreground: #ededed;
+    --background: linear-gradient(to bottom, #ffffff, #87ceeb);
+    /* --foreground: #ededed; */
   }
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: linear-gradient(to bottom, #ffffff, #C99DA3);;
   font-family: "Work Sans", sans-serif;
   /* font-family: var(--font-tommy); */
 }
