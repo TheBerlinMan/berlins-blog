@@ -28,13 +28,16 @@ export default async function BlogPost({ params }: Props) {
 
   return (
     <div className="max-w-4xl mx-auto px-16 py-8">
-      <div className="text-gray-500 mb-4">{formatDateLong(post.date)}</div>
-      <div className="max-w-4xl prose-sm">
+      <div className="max-w-4xl prose-sm bg-white rounded-md p-8 shadow-lg">
         <ReactMarkdown>{post.content}</ReactMarkdown>
+        <div className="text-sm text-gray-500 mt-8 text-right">
+          {formatDateLong(post.date)}
+        </div>
       </div>
       <br />
-      <br />
-      <Link href="/">← Back Home</Link>
+      <Link className="text-sm text-gray-500" href="/">
+        ← Back Home
+      </Link>
     </div>
   );
 }

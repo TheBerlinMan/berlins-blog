@@ -4,11 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* not in use */
 :root {
   --background: linear-gradient(to bottom, #ffffff, #87ceeb);
   /* --foreground: #171717; */
 }
-
+/* not in use */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: linear-gradient(to bottom, #ffffff, #87ceeb);
@@ -16,9 +17,25 @@
   }
 }
 
+@layer base {
+  :root {
+    --radius: 0.5rem
+  }
+}
+
+/* 
+rosy-brown : #C99DA3
+light-blue : #87ceeb
+eggplant : #5E4955
+atomic-tangerine : #F39C6B
+sage : #C0BDA5
+eggshell : #F0EBD8
+*/
+
+
 body {
   color: var(--foreground);
-  background: linear-gradient(to bottom, #ffffff, #C99DA3);;
+  background: linear-gradient(to bottom, #ffffff, #F0EBD8);;
   font-family: "Work Sans", sans-serif;
   /* font-family: var(--font-tommy); */
 }

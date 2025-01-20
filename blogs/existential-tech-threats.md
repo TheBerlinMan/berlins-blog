@@ -2,6 +2,7 @@
 title: Existential Tech Threats
 date: '2024-12-24'
 category: musing
+description: As humanities technical tools has evolved, so has our list of existential threats...
 ---
 
 # Existential Tech Threats
