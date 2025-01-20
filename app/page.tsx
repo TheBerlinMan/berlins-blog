@@ -1,13 +1,5 @@
 import { getCurrentDateLong } from "@/lib/functions";
-import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-} from "@/app/components/tabs";
-import BlogList from "./components/BlogList";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
@@ -27,23 +19,7 @@ export default function Home() {
       {/* <hr className="border-gray-500 mb-4" /> */}
       {/* End of Header */}
 
-      <Tabs className="" defaultValue="blogs">
-        <TabsList className=" items-center">
-          <TabsTrigger value="blogs">Blog</TabsTrigger>
-          <TabsTrigger value="about">About</TabsTrigger>
-          <TabsTrigger value="contact">Contact</TabsTrigger>
-        </TabsList>
-        <hr className="border-gray-500 my-4" />
-        <TabsContent value="blogs">
-          <BlogList />
-        </TabsContent>
-        <TabsContent value="about">
-          <About />
-        </TabsContent>
-        <TabsContent value="contact">
-          <Contact />
-        </TabsContent>
-      </Tabs>
+      <Navbar />
     </div>
   );
 }
